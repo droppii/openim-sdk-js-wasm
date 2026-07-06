@@ -222,10 +222,13 @@ export type MessageItem = {
   status: MessageStatus;
   isReact?: boolean;
   isExternalExtensions?: boolean;
+  isInternal?: boolean;
   offlinePush?: OfflinePush;
   ex?: string;
   localEx?: string;
   textElem?: TextElem;
+  urlTextElem?: UrlTextElem;
+  logTextElem?: LogTextElem;
   cardElem?: CardElem;
   pictureElem?: PictureElem;
   soundElem?: SoundElem;
@@ -243,6 +246,13 @@ export type MessageItem = {
   attachedInfoElem: AttachedInfoElem;
 };
 export type TextElem = {
+  content: string;
+};
+export type UrlTextElem = {
+  content: string;
+  urls: string[];
+};
+export type LogTextElem = {
   content: string;
 };
 export type CardElem = {

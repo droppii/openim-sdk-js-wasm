@@ -375,6 +375,21 @@ class SDK extends Emitter {
       }
     );
   };
+  createUrlTextMessage = (
+    text: string,
+    urls: string,
+    operationID = uuidv4()
+  ) => {
+    return this._invoker<MessageItem>(
+      'createUrlTextMessage',
+      window.createUrlTextMessage,
+      [operationID, text, urls],
+      data => {
+        // compitable with old version sdk
+        return data[0];
+      }
+    );
+  };
   createImageMessageByURL = (
     params: ImageMsgParamsByURL,
     operationID = uuidv4()
