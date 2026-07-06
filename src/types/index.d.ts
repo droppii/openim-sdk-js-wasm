@@ -252,6 +252,11 @@ declare global {
     logout: (operationID: string) => Promise<any>;
     commonEventFunc: (listener: (event: string) => void) => void;
     createTextMessage: (operationID: string, text: string) => Promise<string[]>;
+    createUrlTextMessage: (
+      operationID: string,
+      text: string,
+      urls: string
+    ) => Promise<string[]>;
     getAllConversationList: (operationID: string) => Promise<string>;
     getOneConversation: (
       operationID: string,
